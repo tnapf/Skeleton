@@ -1,0 +1,20 @@
+{
+    "name": "tnapf/skeleton",
+    "description": "A skeleton for starting a new website",
+    "type": "template",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Snedeker",
+            "email": "rsnedeker20@gmail.com"
+        }
+    ],
+    "require": {
+        "tnapf/router": "^2.1"
+    }
+}
