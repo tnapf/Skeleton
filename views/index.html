@@ -22,18 +22,27 @@
             border-radius: 0 !important;
         }
 
-        body > .segment > div {
+        body > .segment > div.image-container {
             display: flex;
             align-items: center; 
             justify-content: center;
             height: 100%;
         }
+
+        body > .segment > div.header {
+            position: absolute;
+            left:0;
+            right:0;
+            margin: auto;
+            bottom: 30px;
+        }
     </style>
 
     <div class="ui inverted segment">
-        <div>
+        <div class="image-container">
             <img src="/img/logo.png" alt="TNAPF Logo" class="ui large centered rounded image">
         </div>
+        <div class="ui centered massive header">Welcome to your application!</div>
     </div>
 </body>
 </html>
