@@ -1,6 +1,9 @@
 <?php
 
+use Controllers\ErrorHandlers;
 use Controllers\Home;
+use Tnapf\Router\Exceptions\HttpInternalServerError;
+use Tnapf\Router\Exceptions\HttpNotFound;
 use Tnapf\Router\Router;
 
 if (PHP_SAPI === "cli-server") {
@@ -17,5 +20,8 @@ if (PHP_SAPI === "cli-server") {
 require_once __DIR__."/../vendor/autoload.php";
 
 Router::get("/", [Home::class, "handle"]);
+
+Router::catch(HttpNotFound::class, [ErrorHandlers::class, "E404"]);
+Router::catch(HttpInternalServerError::class, [ErrorHandlers::class, "E500"]);
 
 Router::run();
