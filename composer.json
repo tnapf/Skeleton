@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Controllers\\": "controllers/"
+            "Controllers\\": "controllers/",
+            "Common\\": "common/"
         }
     },
     "authors": [
