@@ -14,9 +14,12 @@ if (PHP_SAPI === "cli-server") {
     $path = pathinfo($url);
     if (!empty($path["extension"])) {
         $file_path = __DIR__."{$path['dirname']}/{$path["basename"]}";
-        header("content-type: ".Helpers::getMimeFromExtension($path["extension"]));
-        readfile($file_path);
-        return;
+
+        if (file_exists($file_path)) {
+            header("content-type: ".Helpers::getMimeFromExtension($path["extension"]));
+            readfile($file_path);
+            return;
+        }
     }
 }
 
